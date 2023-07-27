@@ -28,15 +28,28 @@ const contacts = [
 
 function lookUpProfile(name, prop) {
   // Only change code below this line
-  for (let i = 0; i < contacts.heigth; i++){
-    if (contacts[i].hasOwnProperty(name) && contacts[i].hasOwnProprety(prop)) {
-      return console.log(contacts[i].prop);
+  let likes = [];
+  for (let i = 0; i < contacts.length; i++){
+    if (contacts[i].firstName == name && contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop];     
+        }
+      }
+    const arr = []; 
+    for (let j = 0; j < contacts.length; j++ ){
+      arr.push(contacts[j].firstName)
     }
-  }
+    if (name != arr){
+      return "No such name";
+    }
+    else {
+      return "No such property";
+    }
+    
   
-    return "No such property";
+  
+    
     
   // Only change code above this line
 }
 
-lookUpProfile("Akira", "likes");
+console.log(lookUpProfile("Akira", "arrtist"));
